@@ -8,10 +8,6 @@ public abstract class Actor {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     protected String name; //name of the actor class
 
     protected int value; //value of the class. used for combat and movement
@@ -45,16 +41,19 @@ public abstract class Actor {
                 name = "Mage"; //can teleport and switch places with others on the field
                 break;
             case 4:
-                name = "";
+                name = "Bard"; //versatile class that can transform into a Mage or a Thief
                 break;
             case 5:
-                name = "Assassin"; //
+                name = "Thief"; //fast class that can move diagonally
+                break;
+            case 6:
+                name = "Acrobat"; //super agile but weak class; can transform into a random class
         }
     }
 
-    public Actor()
+    public Actor(String playa)
     {
         roll();
-
+        playerName = playa;
     }
 }
